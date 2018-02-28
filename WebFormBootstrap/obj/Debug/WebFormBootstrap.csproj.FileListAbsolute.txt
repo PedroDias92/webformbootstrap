@@ -1,0 +1,9 @@
+C:\Users\PedroDias\source\repos\WebFormBootstrap\WebFormBootstrap\bin\WebFormBootstrap.dll.config
+C:\Users\PedroDias\source\repos\WebFormBootstrap\WebFormBootstrap\bin\WebFormBootstrap.dll
+C:\Users\PedroDias\source\repos\WebFormBootstrap\WebFormBootstrap\bin\WebFormBootstrap.pdb
+C:\Users\PedroDias\source\repos\WebFormBootstrap\WebFormBootstrap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PedroDias\source\repos\WebFormBootstrap\WebFormBootstrap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PedroDias\source\repos\WebFormBootstrap\WebFormBootstrap\obj\Debug\WebFormBootstrap.csprojResolveAssemblyReference.cache
+C:\Users\PedroDias\source\repos\WebFormBootstrap\WebFormBootstrap\obj\Debug\WebFormBootstrap.csproj.CoreCompileInputs.cache
+C:\Users\PedroDias\source\repos\WebFormBootstrap\WebFormBootstrap\obj\Debug\WebFormBootstrap.dll
+C:\Users\PedroDias\source\repos\WebFormBootstrap\WebFormBootstrap\obj\Debug\WebFormBootstrap.pdb
