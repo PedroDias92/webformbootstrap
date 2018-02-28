@@ -152,6 +152,7 @@ namespace WebFormBootstrap
                 ddlGender.Items.FindByValue("0").Selected = true;
 
             }
+            BindSizeRptr();
         }
 
     }

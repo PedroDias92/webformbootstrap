@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeBehind="AddSize.aspx.cs" Inherits="WebFormBootstrap.AddSize" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="form-horizontal">
@@ -8,7 +9,7 @@
             <div class="form-group">
                 <asp:Label ID="Label2" runat="server" CssClass="col-md-2 control-label" Text="Size Name"></asp:Label>
                 <div class="col-md-3">
-                   <asp:TextBox ID="txtSizeName" CssClass="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtSizeName" CssClass="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorUsername" CssClass="text-danger" runat="server" ErrorMessage="This field is Required !" ControlToValidate="txtSizeName"></asp:RequiredFieldValidator>
                 </div>
             </div>
@@ -45,8 +46,8 @@
                 </div>
             </div>
 
-            
-             
+
+
             <div class="form-group">
                 <div class="col-md-2"></div>
                 <div class="col-md-6">
@@ -55,17 +56,17 @@
             </div>
         </div>
 
-        <h1>SubCategories</h1>
+        <h1>Sizes</h1>
         <div class="panel card-success">
             <!-- Default panel contents -->
-            
+
             <asp:Repeater ID="rptrSubCategory" runat="server">
                 <HeaderTemplate>
                     <table class="table">
                         <thead>
                             <tr class="table-active">
                                 <th scope="col">#</th>
-                                <th scope="col">Size Name</th>
+                                <th scope="col">Size tag</th>
                                 <th scope="col">Brand</th>
                                 <th scope="col">Category</th>
                                 <th scope="col">SubCategory</th>
@@ -92,6 +93,6 @@
                 </FooterTemplate>
             </asp:Repeater>
         </div>
-          
+
     </div>
 </asp:Content>
