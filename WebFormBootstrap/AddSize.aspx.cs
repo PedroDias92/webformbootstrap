@@ -19,10 +19,27 @@ namespace WebFormBootstrap
                 BindBrand();
                 BindMainCategory();
                 BindGender();
+                BindSizeRptr();
             }
         }
 
-        
+        private void BindSizeRptr()
+        {
+            String CS = ConfigurationManager.ConnectionStrings["MyDBConnectionString1"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("select A.*,B.*,C.*,D.*,E.* from tblSizes A inner join tblCategories B on B.CatId=A.CategoryID inner join tblBrands C on C.BrandID=A.BrandID inner join tblSubCategories D on D.SubCatID=A.SubCategoryID inner join tblGender E on E.GenderID=A.GenderID", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dtrptrSubCategories = new DataTable();
+                        sda.Fill(dtrptrSubCategories);
+                        rptrSubCategory.DataSource = dtrptrSubCategories;
+                        rptrSubCategory.DataBind();
+                    }
+                }
+            }
+        }
 
         private void BindGender()
         {
