@@ -21,7 +21,7 @@ namespace WebFormBootstrap
             String CS = ConfigurationManager.ConnectionStrings["MyDBConnectionString1"].ConnectionString;
             using (SqlConnection con = new SqlConnection(CS))
             {
-                SqlCommand cmd = new SqlCommand("insert into tblCategories values('" + txtCatName.Text + "')", con);
+                SqlCommand cmd = new SqlCommand("insert into tblSubCategories values('" + txtCatName.Text + "')", con);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 txtCatName.Text = string.Empty;
