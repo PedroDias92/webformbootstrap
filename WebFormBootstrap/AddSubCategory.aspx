@@ -25,6 +25,38 @@
                 </div>
             </div>
         </div>
+
+        <h1>SubCategories</h1>
+        <div class="panel card-success">
+            <!-- Default panel contents -->
+            
+            <asp:Repeater ID="rptrSubCategory" runat="server">
+                <HeaderTemplate>
+                    <table class="table">
+                        <thead>
+                            <tr class="table-active">
+                                <th scope="col">#</th>
+                                <th scope="col">SubCategory</th>
+                                <th scope="col">MainCatID</th>
+                                <th scope="col">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr>
+                        <th><%#Eval("SubCatID") %></th>
+                        <td><%#Eval("SubCatName") %></td>
+                        <td><%#Eval("CatName") %></td>
+                        <td>Edit</td>
+                    </tr>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </tbody>
+            </table>
+                </FooterTemplate>
+            </asp:Repeater>
+        </div>
           
     </div>
 </asp:Content>

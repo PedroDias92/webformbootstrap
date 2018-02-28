@@ -19,17 +19,17 @@
             </div>
         </div>
 
-        <h1>Brands</h1>
+        <h1>Categories</h1>
         <div class="panel card-success">
             <!-- Default panel contents -->
             
-            <asp:Repeater ID="rptrBrands" runat="server">
+            <asp:Repeater ID="rptrCategory" runat="server">
                 <HeaderTemplate>
                     <table class="table">
                 <thead >
                     <tr class="table-active">
                         <th scope="col">#</th>
-                        <th scope="col">Brand</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
@@ -37,8 +37,8 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
-                        <th><%#Eval("BrandId") %></th>
-                        <td><%#Eval("Name") %></td>
+                        <th><%#Eval("CatId") %></th>
+                        <td><%#Eval("CatName") %></td>
                         <td>Edit</td>
                     </tr>
                 </ItemTemplate>

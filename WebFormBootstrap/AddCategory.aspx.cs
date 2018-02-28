@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -21,7 +22,20 @@ namespace WebFormBootstrap
 
         private void BindCategoriesRptr()
         {
-            
+            String CS = ConfigurationManager.ConnectionStrings["MyDBConnectionString1"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("select * from tblCategories", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dtrptrCategories = new DataTable();
+                        sda.Fill(dtrptrCategories);
+                        rptrCategory.DataSource = dtrptrCategories;
+                        rptrCategory.DataBind();
+                    }
+                }
+            }
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -34,6 +48,7 @@ namespace WebFormBootstrap
                 cmd.ExecuteNonQuery();
                 txtCatName.Text = string.Empty;
             }
+            BindCategoriesRptr();
         }
     }
 }

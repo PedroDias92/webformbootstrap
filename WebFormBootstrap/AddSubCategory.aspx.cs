@@ -17,6 +17,25 @@ namespace WebFormBootstrap
             if (!IsPostBack)
             {
                 BindMAinCategory();
+                BindSubCategoriesRptr();
+            }
+        }
+
+        private void BindSubCategoriesRptr()
+        {
+            String CS = ConfigurationManager.ConnectionStrings["MyDBConnectionString1"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("select A.*,B.* from tblSubCategories A inner join tblCategories B on B.CatId=A.MainCatID", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dtrptrSubCategories = new DataTable();
+                        sda.Fill(dtrptrSubCategories);
+                        rptrSubCategory.DataSource = dtrptrSubCategories;
+                        rptrSubCategory.DataBind();
+                    }
+                }
             }
         }
 
@@ -54,7 +73,9 @@ namespace WebFormBootstrap
                 txtSubCatName.Text = string.Empty;
                 ddlCategory.ClearSelection();
                 ddlCategory.Items.FindByValue("0").Selected = true;
+                
             }
+            BindSubCategoriesRptr();
         }
     }
 }

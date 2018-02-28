@@ -48,7 +48,7 @@ namespace WebFormBootstrap
                 cmd.ExecuteNonQuery();
                 txtBrandName.Text = string.Empty;
             }
-            //BindBrandsRptr();
+            BindBrandsRptr();
 
         }
     }
