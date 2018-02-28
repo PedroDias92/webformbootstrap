@@ -18,29 +18,27 @@
                 </div>
             </div>
         </div>
-        <!--
-        <h1>Brands</h1>
-        <hr />
-        <div class="panel panel-default">
-            <!-- Default panel contents 
-            <div class="panel-heading">All Brands</div>
 
+        <h1>Brands</h1>
+        <div class="panel card-success">
+            <!-- Default panel contents -->
+            
             <asp:Repeater ID="rptrBrands" runat="server">
                 <HeaderTemplate>
                     <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Brand</th>
-                                <th>Edit</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                <thead >
+                    <tr class="table-active">
+                        <th scope="col">#</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
-                        <th><%# Eval("BrandID") %></th>
-                        <td><%# Eval("Name") %></td>
+                        <th><%#Eval("BrandId") %></th>
+                        <td><%#Eval("Name") %></td>
                         <td>Edit</td>
                     </tr>
                 </ItemTemplate>
@@ -50,7 +48,7 @@
                 </FooterTemplate>
             </asp:Repeater>
         </div>
-        -->
+        
     </div>
             
 </asp:Content>

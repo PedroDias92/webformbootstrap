@@ -51,6 +51,11 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="AddProduct.aspx">Add Product</a>
+                                    <a class="dropdown-item" href="AddBrand.aspx">Add Brand</a>
+                                    <a class="dropdown-item" href="AddCategory.aspx">Add Category</a>
+                                    <a class="dropdown-item" href="AddSubCategory.aspx">Add SubCategory</a>
+                                    <a class="dropdown-item" href="AddGender.aspx">Add Gender</a>
+                                    <a class="dropdown-item" href="AddSize.aspx">Add Size</a>
                                 </div>
                             </li>
                             <li class="nav-item">
