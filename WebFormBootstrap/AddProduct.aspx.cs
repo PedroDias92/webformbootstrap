@@ -174,6 +174,20 @@ namespace WebFormBootstrap
 
                 con.Open();
                 Int64 PID = Convert.ToInt64(cmd.ExecuteScalar());
+
+                //Insert Size Quantatity
+                for(int i = 0; i < cblSize.Items.Count; i++)
+                {
+                    if(cblSize.Items[i].Selected == true)
+                    {
+                        Int64 SizeID = Convert.ToInt64(cblSize.Items[i].Value);
+                        int Quantity = Convert.ToInt32(txtQuantity.Text);
+
+                        SqlCommand cmd2 = new SqlCommand("insert into tblProductSizeQuantity values('" + PID+ "','" + SizeID + "','" + Quantity + "')", con);
+                        
+                        cmd2.ExecuteNonQuery();
+                    }
+                }
             }
         }
     }
