@@ -74,6 +74,8 @@
     <Content Include="AddGender.aspx" />
     <Content Include="AddSize.aspx" />
     <Content Include="AddSubCategory.aspx" />
+    <Content Include="images\Flying Machine Men White Printed Casual Shirt01.jpg" />
+    <Content Include="images\red shirt 401.jpg" />
     <Content Include="Products.aspx" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
