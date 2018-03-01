@@ -147,5 +147,34 @@ namespace WebFormBootstrap
                 ddlGender.Enabled = true;
             }
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                SqlCommand cmd = new SqlCommand("procInsertProducts", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@PName", txtPName.Text);
+                cmd.Parameters.AddWithValue("@PPrice", txtPrice.Text);
+                cmd.Parameters.AddWithValue("@PSelPrice", txtSelPrice.Text);
+                cmd.Parameters.AddWithValue("@PBrandID",ddlBrands.SelectedItem.Value );
+                cmd.Parameters.AddWithValue("@PCategoryID", ddlCategory.SelectedItem.Value);
+                cmd.Parameters.AddWithValue("@PSubCatID", ddlSubCategory.SelectedItem.Value);
+                cmd.Parameters.AddWithValue("@PGenderID", ddlGender.SelectedItem.Value);
+                cmd.Parameters.AddWithValue("@PDescription", txtDesc.Text);
+                cmd.Parameters.AddWithValue("@PProductDetails", txtPDetails.Text);
+                cmd.Parameters.AddWithValue("@PMaterialCare", txtMatCare.Text);
+                if (cbFD.Checked == true) {cmd.Parameters.AddWithValue("@FreeDelivery", 1.ToString());}
+                                     else { cmd.Parameters.AddWithValue("@FreeDelivery", 0.ToString()); }
+                if (cb30Ret.Checked == true) { cmd.Parameters.AddWithValue("@30DayRet", 1.ToString()); }
+                                     else { cmd.Parameters.AddWithValue("@30DayRet", 0.ToString()); }
+                if (cbCOD.Checked == true) { cmd.Parameters.AddWithValue("@COD", 1.ToString()); }
+                                     else { cmd.Parameters.AddWithValue("@COD", 0.ToString()); }
+
+
+                con.Open();
+                Int64 PID = Convert.ToInt64(cmd.ExecuteScalar());
+            }
+        }
     }
 }
