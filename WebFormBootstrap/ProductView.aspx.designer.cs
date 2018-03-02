@@ -13,6 +13,15 @@ namespace WebFormBootstrap {
     public partial class ProductView {
         
         /// <summary>
+        /// rptrImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptrImages;
+        
+        /// <summary>
         /// rblSize control.
         /// </summary>
         /// <remarks>

@@ -1,11 +1,41 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="ProductView.aspx.cs" Inherits="WebFormBootstrap.ProductView" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="col-md-5">
+    <div class="row">
+    <div class="col-md-4 ">
         <div class="img-thumbnail">
-            <img src="Images/Flying%20Machine%20Men%20White%20Printed%20Casual%20Shirt01.jpg" class="img-thumbnail" />
+            <!-- carousel images -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <asp:Repeater ID="rptrImages" runat="server">
+                        <ItemTemplate>
+                            <div class="carousel-item <%#GetActiveClass(Container.ItemIndex) %>">
+                                <img class="d-block w-100" src="Images/ProductImages/15/blue shirt03.jpg" alt="<%#("PID") %>" onerror="this.src='Images/noimage.jpg'" >
+                                <!--<img class="d-block w-100" src="Images/ProductImages/<%#("PID") %>/<%#("Name") %><%#("Extention") %>" alt="<%#("Name") %>" onerror="this.src='Images/noimage.jpg'"> -->
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
+        <!-- carousel images -->
     </div>
-    <div class="col-md-7">
+    <div class="col-md-4">
         <div class="divDet1">
             <h1 class="proNameView">wrogn men blue slim fit printed casual shirt</h1>
             <span class="proOgPriceView">Rs. 1899</span><span class="proPriceDiscountView">210 off</span>
@@ -22,7 +52,7 @@
             </div>
         </div>
         <div class="divDet1">
-            <asp:Button ID="btnAddToCart" CssClass="mainButton" runat="server" Text="ADD TO CART" />
+            <asp:Button ID="btnAddToCart" CssClass="mainButton" runat="server" Text="ADD TO CART" onClick="btnAddToCart_Click"/>
         </div>
         <div>
             <h5 class="h5Size">Description</h5>
@@ -42,6 +72,6 @@
             <p>cash on del</p>
         </div>
 
-
+        </div>
     </div>
 </asp:Content>

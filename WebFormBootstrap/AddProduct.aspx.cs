@@ -192,6 +192,7 @@ namespace WebFormBootstrap
                 //Insert and upload Images
                 if (fuImg01.HasFile)
                 {
+                    Console.Write(txtPName.Text.ToString().Trim());
                     string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
                     if (!Directory.Exists(SavePath))
                     {
@@ -199,7 +200,7 @@ namespace WebFormBootstrap
                     }
                     string Extention = Path.GetExtension(fuImg01.PostedFile.FileName);
                     fuImg01.SaveAs(SavePath + "\\" + txtPName.Text.ToString().Trim() + "01" + Extention);
-
+   
                     SqlCommand cmd3 = new SqlCommand("insert into tblProductImages values('" + PID + "','" + txtPName.Text.ToString().Trim() + "01" + "','" + Extention.ToString().Trim() + "')", con);
                     cmd3.ExecuteNonQuery();
                 }
