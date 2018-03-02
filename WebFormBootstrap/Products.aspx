@@ -6,11 +6,17 @@
             <ItemTemplate>
             <div class="col-sm-3 col-md-3">
                 <div class="thumbnail">
-                    <img src="images/Flying Machine Men White Printed Casual Shirt01.jpg" alt="shirt" class="img-thumbnail">
+                    <!--VER ISTO--> <!-- eliminar os registos dos produtos --> 
+                    
+                    
+                    
+                    <img src="Images/shirt01.jpg" atl="shirt" class="img-thumbnail"/>
+                    <!--<p>Images/ProductImages/<%#Eval("PID") %>/<%#Eval("ImageName")%><%#Eval("Extention")%>  alt="<%#Eval("ImageName")%>"</p> -->
+                    
                     <div class="caption">
-                        <div class="probrand"><%#Eval("Name") %></div>
-                        <div class="proName"><%#Eval("PName") %></div>
-                        <div class="proPrice"><span class="proOgPrice">2200</span> 1999 <span class="proPriceDiscount">(201 Off)</span></div>
+                        <div class="probrand"><%#Eval("ImageName") %></div>
+                        <div class="proName"><%#Eval("BrandName") %></div>
+                        <div class="proPrice"><span class="proOgPrice"><%#Eval("PPrice") %></span> <%#Eval("PSelPrice") %> <span class="proPriceDiscount">(<%#Eval("DiscAmount")%> Off)</span></div>
                     </div>
                 </div>
             </div>

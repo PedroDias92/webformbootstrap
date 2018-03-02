@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -187,6 +188,72 @@ namespace WebFormBootstrap
                         
                         cmd2.ExecuteNonQuery();
                     }
+                }
+                //Insert and upload Images
+                if (fuImg01.HasFile)
+                {
+                    string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
+                    if (!Directory.Exists(SavePath))
+                    {
+                        Directory.CreateDirectory(SavePath);
+                    }
+                    string Extention = Path.GetExtension(fuImg01.PostedFile.FileName);
+                    fuImg01.SaveAs(SavePath + "\\" + txtPName.Text.ToString().Trim() + "01" + Extention);
+
+                    SqlCommand cmd3 = new SqlCommand("insert into tblProductImages values('" + PID + "','" + txtPName.Text.ToString().Trim() + "01" + "','" + Extention.ToString().Trim() + "')", con);
+                    cmd3.ExecuteNonQuery();
+                }
+                if (fuImg02.HasFile)
+                {
+                    string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
+                    if (!Directory.Exists(SavePath))
+                    {
+                        Directory.CreateDirectory(SavePath);
+                    }
+                    string Extention = Path.GetExtension(fuImg02.PostedFile.FileName);
+                    fuImg02.SaveAs(SavePath + "\\" + txtPName.Text.ToString().Trim() + "02" + Extention);
+
+                    SqlCommand cmd4 = new SqlCommand("insert into tblProductImages values('" + PID + "','" + txtPName.Text.ToString().Trim() + "02" + "','" + Extention.ToString().Trim() + "')", con);
+                    cmd4.ExecuteNonQuery();
+                }
+                if (fuImg03.HasFile)
+                {
+                    string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
+                    if (!Directory.Exists(SavePath))
+                    {
+                        Directory.CreateDirectory(SavePath);
+                    }
+                    string Extention = Path.GetExtension(fuImg03.PostedFile.FileName);
+                    fuImg03.SaveAs(SavePath + "\\" + txtPName.Text.ToString().Trim() + "03" + Extention);
+
+                    SqlCommand cmd5 = new SqlCommand("insert into tblProductImages values('" + PID + "','" + txtPName.Text.ToString().Trim() + "03" + "','" + Extention.ToString().Trim() + "')", con);
+                    cmd5.ExecuteNonQuery();
+                }
+                if (fuImg04.HasFile)
+                {
+                    string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
+                    if (!Directory.Exists(SavePath))
+                    {
+                        Directory.CreateDirectory(SavePath);
+                    }
+                    string Extention = Path.GetExtension(fuImg04.PostedFile.FileName);
+                    fuImg04.SaveAs(SavePath + "\\" + txtPName.Text.ToString().Trim() + "04" + Extention);
+
+                    SqlCommand cmd6 = new SqlCommand("insert into tblProductImages values('" + PID + "','" + txtPName.Text.ToString().Trim() + "04" + "','" + Extention.ToString().Trim() + "')", con);
+                    cmd6.ExecuteNonQuery();
+                }
+                if (fuImg05.HasFile)
+                {
+                    string SavePath = Server.MapPath("~/Images/ProductImages/") + PID;
+                    if (!Directory.Exists(SavePath))
+                    {
+                        Directory.CreateDirectory(SavePath);
+                    }
+                    string Extention = Path.GetExtension(fuImg05.PostedFile.FileName); Extention.ToString().Trim();
+                    fuImg05.SaveAs(SavePath + "\\" + txtPName.Text.ToString().Trim() + "05" + Extention);
+
+                    SqlCommand cmd7 = new SqlCommand("insert into tblProductImages values('" + PID + "','" + txtPName.Text.ToString().Trim() + "05" + "','" + Extention.ToString().Trim() + "')", con);
+                    cmd7.ExecuteNonQuery();
                 }
             }
         }
