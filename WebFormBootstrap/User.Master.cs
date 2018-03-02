@@ -16,7 +16,8 @@ namespace WebFormBootstrap
 
         protected void btnSignOut_Click(object sender, EventArgs e)
         {
-
+            Session["USERNAME"] = null;
+            Response.Redirect("~/Default.aspx");
         }
     }
 }
