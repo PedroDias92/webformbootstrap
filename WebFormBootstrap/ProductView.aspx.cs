@@ -19,11 +19,31 @@ namespace WebFormBootstrap
                 if (!IsPostBack)
                 {
                     BindProductImages();
+                    BindProductDetails();
                 }
             }
             else
             {
                 Response.Redirect("~/Products.aspx");
+            }
+        }
+
+        private void BindProductDetails()
+        {
+            Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
+
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                SqlCommand cmd = new SqlCommand("select * from tblProducts where PID=" + PID + "", con);
+                cmd.CommandType = CommandType.Text;
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    DataTable dtBrands = new DataTable();
+                    sda.Fill(dtBrands);
+                    rptrProductDetails.DataSource = dtBrands;
+                    rptrProductDetails.DataBind();
+                }
+
             }
         }
 
