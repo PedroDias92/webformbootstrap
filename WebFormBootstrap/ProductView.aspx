@@ -36,7 +36,7 @@
         <!-- carousel images -->
     </div>
     <div class="col-md-4">
-        <asp:Repeater ID="rptrProductDetails" runat="server">
+        <asp:Repeater ID="rptrProductDetails" OnItemDataBound="rptrProductDetails_ItemDataBound" runat="server">
             <ItemTemplate>
                 <div class="divDet1">
                     <h1 class="proNameView"><%#Eval("PName")%></h1>
@@ -47,9 +47,6 @@
                     <h5 class="h5Size">SIZE</h5>
                     <div>
                         <asp:RadioButtonList ID="rblSize" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
-                            <asp:ListItem Value="M" Text="M"></asp:ListItem>
-                            <asp:ListItem Value="L" Text="L"></asp:ListItem>
-                            <asp:ListItem Value="XL" Text="XL"></asp:ListItem>
                         </asp:RadioButtonList>
                     </div>
                 </div>
@@ -69,11 +66,16 @@
                     <p><%#Eval("PMaterialCare")%></p>
                 </div>
                 <div>
-                    <p>Free Delivery</p>
-                    <p>30 days</p>
-                    <p>cash on del</p>
+                    <p><%# ((int)Eval("FreeDelivery")==1)?"Free Delivery":"" %></p>
+                    <p><%# ((int)Eval("30DayRet")==1)?"30 days":"" %></p>
+                    <p><%# ((int)Eval("COD")==1)?"cash on delivery":"" %></p>
                 </div>
-            </ItemTemplate>
+
+                <asp:HiddenField ID="hfCatID" Value='<%#Eval("PCategoryID") %>' runat="server" />
+                <asp:HiddenField ID="hfSubCatID" Value='<%#Eval("PSubCatID") %>' runat="server" />
+                <asp:HiddenField ID="hfGenderID" Value='<%#Eval("PGenderID") %>' runat="server" />
+                <asp:HiddenField ID="hfBrandID" Value='<%#Eval("PBrandID") %>' runat="server" />
+                    </ItemTemplate>
         </asp:Repeater>
     </div>
     </div>

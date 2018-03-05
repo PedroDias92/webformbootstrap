@@ -76,5 +76,34 @@ namespace WebFormBootstrap
             if (ItemIndex == 0) { return "active"; }
             else { return ""; }
         }
+
+        protected void rptrProductDetails_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if(e.Item.ItemType==ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                string BrandID = (e.Item.FindControl("hfBrandID") as HiddenField).Value;
+                string CatID = (e.Item.FindControl("hfCatID") as HiddenField).Value;
+                string SubCatID = (e.Item.FindControl("hfSubCatID") as HiddenField).Value;
+                string GenderID = (e.Item.FindControl("hfBrandID") as HiddenField).Value;
+
+                RadioButtonList rblSize = e.Item.FindControl("rblSize") as RadioButtonList;
+
+                using (SqlConnection con = new SqlConnection(CS))
+                {
+                    SqlCommand cmd = new SqlCommand("select * from tblSizes where BrandID=" + BrandID + "and CategoryID="+ CatID + "  and SubCategoryID="+SubCatID+" and GenderID="+GenderID+"", con);
+                    cmd.CommandType = CommandType.Text;
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dtBrands = new DataTable();
+                        sda.Fill(dtBrands);
+                        rblSize.DataSource = dtBrands;
+                        rblSize.DataTextField = "sizename";
+                        rblSize.DataValueField = "sizeid";
+                        rblSize.DataBind();
+                    }
+
+                }
+            }
+        }
     }
 }
