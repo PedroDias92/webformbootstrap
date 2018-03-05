@@ -74,6 +74,7 @@
     <Content Include="AddGender.aspx" />
     <Content Include="AddSize.aspx" />
     <Content Include="AddSubCategory.aspx" />
+    <Content Include="Cart.aspx" />
     <Content Include="Images\14\Red Shirt01.jpg" />
     <Content Include="Images\15\blue shirt01.jpg" />
     <Content Include="Images\15\blue shirt02.jpg" />
@@ -233,6 +234,13 @@
     </Compile>
     <Compile Include="AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
