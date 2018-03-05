@@ -13,10 +13,14 @@ namespace WebFormBootstrap
         {
             if(Session["USERNAME"] != null)
             {
+                btnSignOut.Visible = true;
+                btnSignIn.Visible = false;
                 lblSuccess.Text = "Login Success, Welcome "+Session["USERNAME"].ToString();
             }
             else
             {
+                btnSignOut.Visible = false;
+                btnSignIn.Visible = true;
                 Response.Redirect("~/SignIn.aspx");
             }
         }
@@ -25,6 +29,11 @@ namespace WebFormBootstrap
         {
             Session["USERNAME"] = null;
             Response.Redirect("~/Default.aspx");
+        }
+
+        protected void btnSignOut_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SignIn.aspx");
         }
     }
 }

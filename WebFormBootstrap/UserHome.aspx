@@ -12,6 +12,7 @@
 
     <!-- Bootstrap -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link rel="icon" href="data:;base64,iVBORw0KGgo="/>
     <link href="Content/Custom-cs.css" rel="stylesheet" />
@@ -21,6 +22,13 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+        $(document).ready(function myfunction() {
+            $("#btnCart").click(function myfunction() {
+                window.location.href = "/Cart.aspx";
+            });
+        });
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -47,6 +55,8 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="Products.aspx">All Products</a>
+                            <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header">Men</h6>
                             <a class="dropdown-item" href="#">shirt</a>
                             <a class="dropdown-item" href="#">pants</a>
@@ -57,8 +67,20 @@
                         </div>
                     </li>
 
+
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item ">
+                        <button id="btnCart" type="button" class="btn btn-outline-success">
+                            Cart <span class="badge badge-light" id="pCount" runat="server"></span>
+                            <span class="sr-only">unread messages</span>
+                        </button>
+                    </li>
                     <li class="nav-item">
-                        <asp:Button ID="btnSignOut" runat="server" CssClass="btn btn-default nav-btn" Text="Sign Out" OnClick="btnSignOut_Click" />
+                        <asp:Button ID="btnSignOut" runat="server" CssClass="btn btn-default nav-btn" Text="Sign in" OnClick="btnSignOut_Click1" />
+                        <asp:Button ID="btnSignIn" runat="server" CssClass="btn btn-default nav-btn" Text="Sign Out" OnClick="btnSignOut_Click" />
+
                     </li>
                 </ul>
             </div>
