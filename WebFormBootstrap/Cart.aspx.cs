@@ -22,11 +22,12 @@ namespace WebFormBootstrap
 
         private void BindCartProducts()
         {
-
             if(Request.Cookies["CartPID"] != null)
             {
                 string CookieData = Request.Cookies["CartPID"].Value.Split('=')[1];
                 string[] CookieDataArray = CookieData.Split(',');
+                Int64 CartTotal = 0;
+                Int64 Total = 0;
                 if(CookieDataArray.Length > 0)
                 {
                     h5NoItems.InnerText = "My Cart (" + CookieDataArray.Length + " Items)";
@@ -49,10 +50,16 @@ namespace WebFormBootstrap
                             }
 
                         }
+                        CartTotal += Convert.ToInt64(dtBrands.Rows[i]["PPrice"]);
+                        Total += Convert.ToInt64(dtBrands.Rows[i]["PSelPrice"]);
                     }
                     rptrCartProducts.DataSource = dtBrands;
                     rptrCartProducts.DataBind();
                     divPriceDetails.Visible = true;
+
+                    spanCartTotal.InnerText = Total.ToString();
+                    spanTotal.InnerText = "Rs. " + CartTotal.ToString();
+                    spanDiscount.InnerText = (CartTotal - Total).ToString();
                 }
                 else
                 {

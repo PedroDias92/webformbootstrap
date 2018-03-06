@@ -31,16 +31,16 @@
                 <h5>PRICE DETAILS</h5>
                 <div>
                     <label>Cart Total: </label>
-                    <span class="pull-right priceGray ">1900</span>
+                    <span class="pull-right priceGray " id="spanCartTotal" runat="server"></span>
                 </div>
                 <div>
                     <label>Cart Discount: </label>
-                    <span class="pull-right priceGreen">-500</span>
+                    <span class="pull-right priceGreen" id="spanDiscount" runat="server"></span>
                 </div>
             </div>
             <div class="proPriceView">
                 <label>Total: </label>
-                <span class="pull-right">1400</span>
+                <span class="pull-right" id="spanTotal" runat="server"></span>
             </div>
             <div>
                 <asp:Button ID="btnBuyNow" OnClick="btnBuyNow_Click1" CssClass="buyNowBtn" runat="server" Text="Buy now" />
