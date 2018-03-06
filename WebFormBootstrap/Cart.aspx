@@ -19,7 +19,7 @@
                             <span class="proPriceView"><%#Eval("PSelPrice","{0:c}") %></span> <!--"{0:c}" dá o simbolo do euro/dollar dependendo da localizacao do browser -->
                             <span class="proOgPriceView"><%#Eval("PPrice","{0:c}") %></span>
                             <p>
-                                <asp:Button ID="btnRemoveItem" OnClick="btnRemoveItem_Click" CssClass="removeButton" runat="server" Text="Remove" />
+                                <asp:Button CommandArgument='<%#Eval("PID")+"-"+ Eval("SizeIDD")%>' ID="btnRemoveItem" OnClick="btnRemoveItem_Click" CssClass="removeButton" runat="server" Text="REMOVE" />
                             </p>
                         </div>
                     </div>
