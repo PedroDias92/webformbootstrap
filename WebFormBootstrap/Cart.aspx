@@ -3,25 +3,30 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row" style="padding-top: 50px;">
         <div class="col-md-9">
-            <h5>MY CART (2 Items) </h5>
-            <div class="media" style="border: 1px solid #eaeaec" >
-                <div class="media-left" style=" margin-right:30px;">
-                    <a href="#">
-                        <img class="media-object" src="Images/ProductImages/15/blue shirt02.jpg" alt="things" width="100px;">
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading proNameViewCart">Media heading</h4>
-                    <p class="proPriceDiscountView">Size:42</p>
-                    <span class="proPriceView">RS: 455</span>
-                    <span class="proOgPriceView">RS: 455</span>
-                    <p>
-                        <asp:Button ID="btnRemoveItem" OnClick="btnRemoveItem_Click" CssClass="removeButton" runat="server" Text="Remove" />
-                    </p>
-                </div>
-            </div>
+            <h5 class="proNameViewCart" runat="server" id="h5NoItems"></h5>
+            <asp:Repeater ID="rptrCartProducts" runat="server">
+                <ItemTemplate>
+                    <div class="media" style="border: 1px solid #eaeaec">
+                        <div class="media-left" style="margin-right: 30px;">
+                            <a href="ProductView.aspx?PID=<%#Eval("PID") %>" target="_blank">
+                                <img class="media-object" src="Images/ProductImages/15/blue shirt02.jpg" alt="things" width="100px;" onerror="this.src='Images/noimage.jpg'">
+                               <!-- <img class="d-block w-100" src="Images/ProductImages/<%#("PID") %>/<%#("Name") %><%#("Extention") %>" alt="<%#("Name") %>" onerror="this.src='Images/noimage.jpg'"> -->
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading proNameViewCart"><%#Eval("PName") %></h4>
+                            <p class="proPriceDiscountView"><%#Eval("SizeNamee") %></p>
+                            <span class="proPriceView"><%#Eval("PSelPrice","{0:c}") %></span> <!--"{0:c}" dá o simbolo do euro/dollar dependendo da localizacao do browser -->
+                            <span class="proOgPriceView"><%#Eval("PPrice","{0:c}") %></span>
+                            <p>
+                                <asp:Button ID="btnRemoveItem" OnClick="btnRemoveItem_Click" CssClass="removeButton" runat="server" Text="Remove" />
+                            </p>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3" runat="server" id="divPriceDetails">
             <div>
                 <h5>PRICE DETAILS</h5>
                 <div>

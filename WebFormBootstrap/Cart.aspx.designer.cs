@@ -13,13 +13,31 @@ namespace WebFormBootstrap {
     public partial class Cart {
         
         /// <summary>
-        /// btnRemoveItem control.
+        /// h5NoItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRemoveItem;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl h5NoItems;
+        
+        /// <summary>
+        /// rptrCartProducts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptrCartProducts;
+        
+        /// <summary>
+        /// divPriceDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPriceDetails;
         
         /// <summary>
         /// btnBuyNow control.
