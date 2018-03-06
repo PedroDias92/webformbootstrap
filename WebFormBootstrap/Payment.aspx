@@ -31,26 +31,26 @@
 
         </div>
     </div>
-    <div class="col-md-3" runat="server" id="divPriceDetails">
+    <div class="col-md-3" runat="server" id="divPriceDetails" style="padding-top: 50px; padding-left:20px;">
             <div style="border-bottom: 1px solid #eaeaec;">
                 <h5 class="proNameViewCart">PRICE DETAILS</h5>
                 <div>
                     <label>Cart Total</label>
-                    <span class="pull-right priceGray" id="spanCartTotal" runat="server">25000</span>
+                    <span class="pull-right priceGray" id="spanCartTotal" runat="server"></span>
                 </div>
                 <div>
                     <label>Cart Discount</label>
-                    <span class="pull-right priceGreen" id="spanDiscount" runat="server">123</span>
+                    <span class="pull-right priceGreen" id="spanDiscount" runat="server"></span>
                 </div>
             </div>
             <div>
                 <div class="proPriceView">
                     <label>Total</label>
-                    <span class="pull-right" id="spanTotal" runat="server">534</span>
+                    <span class="pull-right" id="spanTotal" runat="server"></span>
                 </div>
             </div>
         </div>
-    <div class="col-md-12">
+    <div class="col-md-12" style="padding-left: 20px;">
         <h3>Choose Payment Mode</h3>
         <hr />
 

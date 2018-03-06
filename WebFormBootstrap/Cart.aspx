@@ -26,7 +26,7 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-        <div class="col-md-3" runat="server" id="divPriceDetails">
+        <div class="col-md-3" runat="server" id="divPriceDetails" style="padding-left: 50px;">
             <div>
                 <h5>PRICE DETAILS</h5>
                 <div>
