@@ -62,15 +62,24 @@ namespace WebFormBootstrap
                     if (Utype == "U")
                     {
                         Session["USERNAME"] = UserName.Text;
-                        Response.Redirect("~/UserHome.aspx");
+                        if (Request.QueryString["rurl"] != null)
+                        {
+                            if (Request.QueryString["rurl"] == "cart")
+                            {
+                                Response.Redirect("~/Cart.aspx");
+                            }
+                        }
+                        else
+                        {
+                            Response.Redirect("~/UserHome.aspx");
+                        }
+                        
                     }
                     if(Utype == "A")
                     {
                         Session["USERNAME"] = UserName.Text;
-                        Response.Redirect("~/AdminHome.aspx");
+                            Response.Redirect("~/AdminHome.aspx");
                     }
-
-                    
                 }
                 else
                 {
